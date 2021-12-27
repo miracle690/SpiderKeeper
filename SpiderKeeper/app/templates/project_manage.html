@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content_header %}
-<h1>Project Manage</h1>
+<h1>项目管理</h1>
 {% endblock %}
 {% block content_body %}
 {% with messages = get_flashed_messages() %}
@@ -24,10 +24,10 @@
     </div>
     <div class="box-footer text-black">
         {% if project %}
-        <a href="/project/{{ project.id }}/delete" class="btn btn-block btn-danger btn-flat">Delete Project</a>
+        <a href="/project/{{ project.id }}/delete" class="btn btn-block btn-danger btn-flat">删除项目</a>
         {% else %}
         <a class="btn btn-block btn-info btn-flat" data-toggle="modal"
-           data-target="#project-create-modal">Create Project
+           data-target="#project-create-modal">新建项目
         </a>
         {% endif %}
     </div>

@@ -6,5 +6,8 @@ docs/_build
 .coverage
 venv
 dist
+eggs
+logs
+dbs
 build
 SpiderKeeper.db

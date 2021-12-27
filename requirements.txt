@@ -9,7 +9,7 @@ Flask-SQLAlchemy==2.2
 itsdangerous==0.24
 Jinja2==2.9.6
 MarkupSafe==1.0
-PyMySQL==0.7.11
+PyMySQL==0.9.3
 python-dateutil==2.6.0
 pytz==2017.2
 requests==2.13.0

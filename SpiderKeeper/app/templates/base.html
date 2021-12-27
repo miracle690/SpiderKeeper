@@ -34,9 +34,9 @@
         <!-- Logo -->
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <a href="/" class="logo">
-            <span class="logo-mini"><b>S</b>K</span>
+            <span class="logo-mini"><b>爬</b>虫</span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Spider</b>Keeper</span>
+            <span class="logo-lg"><b>爬虫</b>操控平台</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
@@ -45,7 +45,7 @@
             <ul class="nav navbar-nav nav-xs">
                 <li style="width: 50px;float: left;">
                     <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-                        <span class="sr-only">Toggle navigation</span>
+                        <span class="sr-only">切换导航</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -54,14 +54,14 @@
                 <li class="dropdown" style="float: left;">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                        style="padding-top: 15px;padding-bottom: 15px;">
-                        <span>Projects</span>
+                        <span>项目列表</span>
                     </a>
                     <ul class="dropdown-menu">
                         {% for project in project_list %}
                         <li><a href="/project/{{ project.id }}">{{ project.project_name }}</a></li>
                         {% endfor %}
                         <li role="separator" class="divider"></li>
-                        <li><a href="#" data-toggle="modal" data-target="#project-create-modal">Create Project</a>
+                        <li><a href="#" data-toggle="modal" data-target="#project-create-modal">新建项目</a>
                         </li>
                     </ul>
                 </li>
@@ -83,26 +83,26 @@
                 </div>
             </div>
             <ul class="sidebar-menu">
-                <li class="header">JOBS</li>
+                <li class="header">任务</li>
                 <li><a href="/project/{{ project.id }}/job/dashboard"><i
                         class="fa fa-dashboard text-blue"></i>
-                    <span>Dashboard</span></a></li>
+                    <span>任务面板</span></a></li>
                 <li><a href="/project/{{ project.id }}/job/periodic"><i class="fa fa-tasks text-green"></i>
-                    <span>Periodic Jobs</span></a></li>
-                <li class="header">SPIDERS</li>
+                    <span>定时任务</span></a></li>
+                <li class="header">爬虫</li>
                 <li><a href="/project/{{ project.id }}/spider/dashboard"><i class="fa fa-flask text-red"></i>
-                    <span>Dashboard</span></a>
+                    <span>控制面板</span></a>
                 </li>
                 <li><a href="/project/{{ project.id }}/spider/deploy"><i class="fa fa-server text-orange"></i>
-                    <span>Deploy</span></a></li>
+                    <span>部署</span></a></li>
                 <!--<li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Settings</span></a></li>-->
-                <li class="header">PROJECT</li>
-                <li><a href="/project/{{ project.id }}/project/stats"><i class="fa  fa-area-chart text-gray"></i> <span>Running Stats</span></a>
+                <li class="header">项目</li>
+                <li><a href="/project/{{ project.id }}/project/stats"><i class="fa  fa-area-chart text-gray"></i> <span>运行统计</span></a>
                 </li>
                 <!--<li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Members</span></a></li>-->
-                <li><a href="/project/manage"><i class="fa fa-gears text-red"></i> <span>Manage</span></a></li>
-                <li class="header">SERVER</li>
-                <li><a href="/project/{{ project.id }}/server/stats"><i class="fa fa-bolt text-red"></i> <span>Usage Stats</span></a>
+                <li><a href="/project/manage"><i class="fa fa-gears text-red"></i> <span>管理</span></a></li>
+                <li class="header">服务</li>
+                <li><a href="/project/{{ project.id }}/server/stats"><i class="fa fa-bolt text-red"></i> <span>使用情况统计</span></a>
                 </li>
             </ul>
         </section>
@@ -126,12 +126,12 @@
     </div>
     <!-- /.content-wrapper -->
 
-    <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-            <b>Version</b> 1.2.0
-        </div>
-        <strong><a href="https://github.com/DormyMo/SpiderKeeper">SpiderKeeper</a>.</strong>
-    </footer>
+<!--    <footer class="main-footer">-->
+<!--        <div class="pull-right hidden-xs">-->
+<!--            <b>Version</b> 1.2.0-->
+<!--        </div>-->
+<!--        <strong><a href="https://github.com/DormyMo/SpiderKeeper">SpiderKeeper</a>.</strong>-->
+<!--    </footer>-->
 
     <div class="modal fade" role="dialog" id="project-create-modal">
         <div class="modal-dialog" role="document">
@@ -140,18 +140,18 @@
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">×</span></button>
-                        <h4 class="modal-title">Create Project</h4>
+                        <h4 class="modal-title">新建项目</h4>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="project-name">Project Name</label>
+                            <label for="project-name">项目名称</label>
                             <input type="text" name="project_name" id="project-name" class="form-control"
-                                   placeholder="Project Name">
+                                   placeholder="项目名称">
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Create</button>
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭</button>
+                        <button type="submit" class="btn btn-primary">创建</button>
                     </div>
                 </form>
             </div>

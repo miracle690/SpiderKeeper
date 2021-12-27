@@ -1,4 +1,8 @@
 # SpiderKeeper Changelog
+## 2.0.0-plan 更新计划
+-升级到python3.7
+-升级依赖库版本
+
 ## 1.2.0 (2017-07-24)
 - support chose server manually
 - support set cron exp manually

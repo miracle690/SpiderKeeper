@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content_header %}
-<h1>Job Dashboard</h1>
+<h1>任务面板</h1>
 <ol style="float: right;
     margin-top: 0;
     margin-bottom: 0;
@@ -10,7 +10,7 @@
     top: 15px;
     right: 10px;">
     <button type="button" class="btn btn-success btn-flat" style="margin-top: -10px;" data-toggle="modal"
-            data-target="#job-run-modal">RunOnce
+            data-target="#job-run-modal">单次运行
     </button>
 </ol>
 {% endblock %}
@@ -18,7 +18,7 @@
 <!--======next job======-->
 <div class="box">
     <div class="box-header">
-        <h3 class="box-title">Next Jobs</h3>
+        <h3 class="box-title">任务-序列</h3>
         <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
             </button>
@@ -28,11 +28,11 @@
         <table class="table table-striped">
             <tr>
                 <th style="width: 10px">#</th>
-                <th style="width: 30px">Job</th>
-                <th style="width: 160px">Spider</th>
-                <th style="width: 100px">Args</th>
-                <th style="width: 40px">Priority</th>
-                <th style="width: 160px">Wait</th>
+                <th style="width: 30px">任务</th>
+                <th style="width: 160px">名称</th>
+                <th style="width: 100px">参数</th>
+                <th style="width: 40px">优先级</th>
+                <th style="width: 160px">等待时长</th>
             </tr>
             {% for job in job_status.PENDING %}
             {% if job.job_instance %}
@@ -71,7 +71,7 @@
 <!--======running job======-->
 <div class="box">
     <div class="box-header">
-        <h3 class="box-title">Running Jobs</h3>
+        <h3 class="box-title">任务-运行中</h3>
         <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
             </button>
@@ -81,15 +81,15 @@
         <table class="table table-striped">
             <tr>
                 <th style="width: 10px">#</th>
-                <th style="width: 30px">Job</th>
-                <th style="width: 160px">Spider</th>
-                <th style="width: 100px">Args</th>
-                <th style="width: 20px">Priority</th>
-                <th style="width: 40px">Runtime</th>
-                <th style="width: 120px">Started</th>
-                <th style="width: 40px">Log</th>
-                <th style="width: 40px">Running On</th>
-                <th style="width: 40px">Action</th>
+                <th style="width: 30px">任务</th>
+                <th style="width: 160px">名称</th>
+                <th style="width: 100px">参数</th>
+                <th style="width: 20px">优先级</th>
+                <th style="width: 40px">运行时长</th>
+                <th style="width: 120px">开始时间</th>
+                <th style="width: 40px">日志</th>
+                <th style="width: 40px">运行地址</th>
+                <th style="width: 40px">操作</th>
             </tr>
             {% for job in job_status.RUNNING %}
             {% if job.job_instance %}
@@ -137,7 +137,7 @@
 <!--======completed job======-->
 <div class="box">
     <div class="box-header">
-        <h3 class="box-title">Completed Jobs</h3>
+        <h3 class="box-title">任务-已结束</h3>
         <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
             </button>
@@ -147,14 +147,14 @@
         <table class="table table-striped">
             <tr>
                 <th style="width: 10px">#</th>
-                <th style="width: 30px">Job</th>
-                <th style="width: 160px">Spider</th>
-                <th style="width: 100px">Args</th>
-                <th style="width: 20px">Priority</th>
-                <th style="width: 40px">Runtime</th>
-                <th style="width: 120px">Started</th>
-                <th style="width: 10px">Log</th>
-                <th style="width: 10px">Status</th>
+                <th style="width: 30px">任务</th>
+                <th style="width: 160px">名称</th>
+                <th style="width: 100px">参数</th>
+                <th style="width: 20px">优先级</th>
+                <th style="width: 40px">运行时长</th>
+                <th style="width: 120px">开始时间</th>
+                <th style="width: 10px">日志</th>
+                <th style="width: 10px">状态</th>
             </tr>
             {% for job in job_status.COMPLETED %}
             {% if job.job_instance %}
@@ -210,11 +210,11 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span></button>
-                    <h4 class="modal-title">Run Spider Once</h4>
+                    <h4 class="modal-title">添加单次运行爬虫</h4>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label>Spider</label>
+                        <label>爬虫</label>
                         <select class="form-control" name="spider_name">
                             {% for spider in spider_list %}
                             <option value="{{ spider.spider_name }}">{{ spider.spider_name }}</option>
@@ -222,7 +222,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Priority</label>
+                        <label>优先级</label>
                         <select class="form-control" name="priority">
                             <option label="Low" value="number:-1">Low</option>
                             <option label="Normal" value="0" selected="selected">Normal</option>
@@ -231,11 +231,11 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Args</label>
+                        <label>参数</label>
                         <input type="text" name="spider_arguments" class="form-control" placeholder="foo=1,bar=2">
                     </div>
                     <div class="form-group">
-                        <label>Chose Daemon</label>
+                        <label>选择守护进程</label>
                         <select class="form-control" name="daemon">
                             <option value="auto">auto</option>
                             {% for server in servers %}
@@ -246,8 +246,8 @@
                     <input type="hidden" name="run_type" value="onetime">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Create</button>
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭</button>
+                    <button type="submit" class="btn btn-primary">新建</button>
                 </div>
             </form>
         </div>
